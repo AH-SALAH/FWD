@@ -13,15 +13,15 @@
 ├── _docs
 ├── src
 │   ├── bin
-│   │   └── www.js
-│   ├── controllers
+│   │   └── www.js ============> server runs
+│   ├── controllers ===========> Ctrls to handle routes bussines
 │   │   ├── home
 │   │   │   └── index.js
 │   │   └── weather
 │   │       └── index.js
 │   ├── public
 │   │   ├── js
-│   │   │   └── app.js
+│   │   │   └── app.js =========> client js
 │   │   ├── style
 │   │   │   ├── scss
 │   │   │   │   ├── bootstrap
@@ -36,17 +36,17 @@
 │   │   │   └── index.js
 │   │   ├── weather
 │   │   │   └── index.js
-│   │   └── index.js
-│   ├── views
+│   │   └── index.js  =============> routes wrapper/collector
+│   ├── views   ===================> hbs views
 │   │   ├── layouts
 │   │   │   └── layout.hbs
 │   │   ├── partials
 │   │   │   └── footer.hbs
 │   │   ├── error.hbs
 │   │   └── index.hbs
-│   ├── app.config.js
-│   ├── app.js
-│   └── db.js
+│   ├── app.config.js  ============> app config (e.g. cors() | view engine | global middleWare)
+│   ├── app.js  ===================> app express instance
+│   └── db.js  ====================> saves data as [{}]
 ├── .editorconfig
 ├── .gitattributes
 ├── .gitignore
