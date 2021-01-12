@@ -10,6 +10,7 @@ docs_*/
 bend/
 fend/
 fullstack/
+projs/
 #.gitignore
 #.gitattributes
 npm-debug.log
