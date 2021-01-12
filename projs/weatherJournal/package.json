@@ -1,0 +1,30 @@
+{
+    "name": "weatherjournal",
+    "version": "1.0.0",
+    "private": true,
+    "main": "www",
+    "scripts": {
+        "start": "start http://localhost:5000 && nodemon ./src/bin/www",
+        "test": "jest",
+        "docs": "jsdoc -c jsdoc.conf.json"
+    },
+    "dependencies": {
+        "cookie-parser": "~1.4.5",
+        "debug": "~4.3.1",
+        "express": "~4.17.1",
+        "express-handlebars": "^5.2.0",
+        "hbs": "^4.1.1",
+        "http-errors": "~1.8.0",
+        "mdb-ui-kit": "^3.0.0",
+        "morgan": "~1.10.0",
+        "node-sass-middleware": "0.11.0"
+    },
+    "devDependencies": {
+        "docdash": "^1.2.0",
+        "jsdoc": "^3.6.6",
+        "nodemon": "^2.0.7"
+    },
+    "author": "https://github.com/AH-SALAH",
+    "description": "weather journal app",
+    "type": "module"
+}

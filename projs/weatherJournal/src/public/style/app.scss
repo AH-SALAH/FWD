@@ -1,0 +1,124 @@
+@import './scss/mdb.free';
+
+// *{
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+// }
+
+.text-justify {
+    text-align: justify;
+}
+
+body {
+    font-family: 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    & #app {
+
+        & .card-wrapper {
+            min-height: 100vh;
+
+            & .generate-btn {
+                font-family: sans-serif;
+            }
+
+            & .card-footer {
+
+                & .entry {
+
+                    @media all and (max-width: 786px) {
+                        width: 100% !important;
+                    }
+
+                    & #entryHolder {
+                        animation: slide 0.5s ease-in forwards;
+
+                        @keyframes slide {
+                            from{
+                                opacity: 0;
+                                transform: translateY(200);
+                            }
+                            to{
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+
+
+                        & #content {
+
+                            & .content__text {
+                                text-overflow: ellipsis;
+                                overflow     : hidden;
+                                white-space  : nowrap;
+
+                                @supports (display: -webkit-box) {
+                                    display           : -webkit-box;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                    white-space       : normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+// ===========================
+// custom scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background   : #888;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color      : #f0d43a;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color      : #f0d43a;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color      : #f0d43a;
+    font-family: 'Oswald', sans-serif;
+
+}

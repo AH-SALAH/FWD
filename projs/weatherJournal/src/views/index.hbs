@@ -1,0 +1,73 @@
+<div id="app" class="container-fluid bg-light p-0 h-100">
+
+    <article class="container card-wrapper py-5 h-100">
+        <div class="card">
+            <h1 class="card-header text-center">
+                <i class="fas fa-cloud text-info"></i> {{title}}
+            </h1>
+            <form class="weather-form" novalidate>
+                <div class="card-body">
+                    <section class="row mt-5 zip-section">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-outline">
+                                <input type="text" id="zip" class="form-control" required>
+                                <label for="zip" class="form-label">Enter Zipcode here</label>
+                                <div class="invalid-feedback zip-err">Please Add Zip Value</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="holder feel-section row my-5">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="feelings" rows="4" required></textarea>
+                                <label class="form-label" for="feelings">How are you feeling today?</label>
+                                <div class="invalid-feedback feeling-err">Please Add Feeling Value</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="errs text-center h5 text-capitalize text-danger">
+
+                    </section>
+                </div>
+                <div class="card-footer text-muted p-3">
+                    <div
+                        class="actions d-flex justify-content-center justify-content-md-between align-items-center flex-wrap">
+                        <div class="entry d-flex flex-wrap mb-4 mb-md-0 w-75">
+                            <div class="title mb-3 mb-md-0 mx-2 align-self-center">Most Recent Entry : </div>
+                            <div id="entryHolder"
+                                class="d-flex justify-content-start align-items-center flex-wrap mb-3 mb-md-0 d-none">
+                                <div id="date" class="mx-2">
+                                    <i class="fas fa-calendar-alt text-warning"></i>
+                                    <span class="date__text">{{todayDate}}</span>
+                                </div>
+                                <div id="temp" class="mx-2">
+                                    <i class="fas fa-thermometer-three-quarters temp-icon text-info"></i>
+                                    <span class="temp__text">...</span>
+                                </div>
+                                <div id="zipCode" class="mx-2">
+                                    <i class="fas fa-map-pin text-danger"></i>
+                                    <span class="zipCode__text">...</span>
+                                </div>
+                                <p id="content" class="m-0 mx-2 d-flex justify-content-start align-items-center">
+                                    <i class="fas fa-heart text-secondary"></i>
+                                    <span class="content__text px-2">... </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="generate mb-0">
+                            <button class="btn btn-primary generate-btn" id="generate" type="submit">
+                                <span class="spinner-border spinner-border-sm spinner d-none" role="status"
+                                    aria-hidden="true"></span>
+                                <span class="mx-2"> Generate </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </article>
+
+
+    {{> footer}}
+
+</div>
