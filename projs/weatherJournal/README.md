@@ -8,6 +8,7 @@
 ---
 ### Proj Structure
 
+```
 .
 ├── _docs
 ├── src
@@ -54,7 +55,7 @@
 ├── package-lock.json
 ├── package.json
 └── README.md
-
+```
 ---
 ## Techs/Dependancies:
 
