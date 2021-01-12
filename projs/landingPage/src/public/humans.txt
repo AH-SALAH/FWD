@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Ahmed Salah -- fend -- <twitter>
+
+# THANKS
+
+    - Tech tools authors
+    - Ahmed Salah
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, 
+    HTML5,
+    js,
+    Webpack,
+    bootstrap

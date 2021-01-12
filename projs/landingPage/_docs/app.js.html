@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>app.js - kohawayosa</title>
+    
+    <meta name="description" content="kohawayosa landing page" />
+    
+        <meta name="keywords" content="landing page" />
+        <meta name="keyword" content="landing page" />
+    
+    
+    
+    <meta property="og:title" content="kohawayosa"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="src/assets/img/nibbon-logo.svg"/>
+    <meta property="og:site_name" content="kohawayosa"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="javascript:;" target="" class="menu-item" id="forum_link" >Forum</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a><ul class='methods'><li data-type='method'><a href="App.html#.animateDocToTop">animateDocToTop</a></li><li data-type='method'><a href="App.html#.fixNavBar">fixNavBar</a></li><li data-type='method'><a href="App.html#.handleNavIndicator">handleNavIndicator</a></li><li data-type='method'><a href="App.html#.handleSideIndicator">handleSideIndicator</a></li><li data-type='method'><a href="App.html#.init">init</a></li><li data-type='method'><a href="App.html#.ObserveSections">ObserveSections</a></li><li data-type='method'><a href="App.html#.populateData">populateData</a></li><li data-type='method'><a href="App.html#.scrollToTop">scrollToTop</a></li><li data-type='method'><a href="App.html#.sectionsObserverHandler">sectionsObserverHandler</a></li></ul></li><li><a href="NavBar.html">NavBar</a><ul class='methods'><li data-type='method'><a href="NavBar.html#.handleNavLinksClick">handleNavLinksClick</a></li><li data-type='method'><a href="NavBar.html#.initNavBar">initNavBar</a></li></ul></li><li><a href="PopulateData.html">PopulateData</a></li><li><a href="ScrollToTop.html">ScrollToTop</a><ul class='methods'><li data-type='method'><a href="ScrollToTop.html#.handleScrollCb">handleScrollCb</a></li><li data-type='method'><a href="ScrollToTop.html#.initToTop">initToTop</a></li></ul></li><li><a href="SectionsObserver.html">SectionsObserver</a><ul class='methods'><li data-type='method'><a href="SectionsObserver.html#.initSectionsObserver">initSectionsObserver</a></li></ul></li><li><a href="SideNavIndicator.html">SideNavIndicator</a><ul class='methods'><li data-type='method'><a href="SideNavIndicator.html#.handleIndicatorsClick">handleIndicatorsClick</a></li><li data-type='method'><a href="SideNavIndicator.html#.initSideNavIndicator">initSideNavIndicator</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#io">io</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">app.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @author AH.SALAH
+ * @email https://github.com/AH-SALAH
+ * @create date 2020-12-22 03:33:35
+ * @modify date 2020-12-22 03:35:15
+ * @desc app.js
+ */
+
+// ==================================
+// import all files from a dir that match regex
+import { importAll } from "_/js/utils/importAllFiles";
+//================================
+// import all imgs
+importAll(require.context('_/assets/img/', true, /\.(png|jpe?g|gif|svg)$/));
+
+// import front-end compliment files
+importAll(require.context('_/public/', true, /(\.(ico|txt|xml|htaccess|webmanifest)?$|^.*(android|apple|favicon|safari|tile|mstile).*$)/));
+
+// //import fonts files
+// importAll(require.context('@fortawesome/fontawesome-free/webfonts', true, /\.(woff(2)?|ttf|eot)(?=\?[A-Za-z0-9])?$|\.svg$/));
+
+//================================
+//import dependancies
+//================================
+// Import Bootstrap’s JavaScript
+// import "bootstrap";
+
+//// Alternatively, you may import plugins individually as needed:
+// import 'bootstrap/js/dist/util';
+import "bootstrap/js/dist/button";
+import "bootstrap/js/dist/collapse";
+
+//================================
+// Note: Importing bootstrap to get a quick style boost
+//=================================
+
+// import needed modules
+//================================
+import PopulateData from "_/js/populateData";
+import SectionsObserver from "_/js/sectionsObserver";
+import ScrollToTop from "_/js/scrollToTop";
+import NavBar from "_/js/navBar";
+import SideNavIndicator from "_/js/sideNavIndicator";
+// import scss
+import "_/style/scss/app.scss";
+
+/*******************************************************************************/
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ███████╗████████╗ █████╗ ██████╗ ████████╗     █████╗ ██████╗ ██████╗          ██╗███████╗
+// ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██╔══██╗██╔══██╗         ██║██╔════╝
+// ███████╗   ██║   ███████║██████╔╝   ██║       ███████║██████╔╝██████╔╝         ██║███████╗
+// ╚════██║   ██║   ██╔══██║██╔══██╗   ██║       ██╔══██║██╔═══╝ ██╔═══╝     ██   ██║╚════██║
+// ███████║   ██║   ██║  ██║██║  ██║   ██║       ██║  ██║██║     ██║         ╚█████╔╝███████║
+// ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚═╝     ╚═╝          ╚════╝ ╚══════╝
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/*******************************************************************************/
+// start app
+
+/**
+ *
+ * @author AH.SALAH
+ * @class App
+ */
+class App {
+
+    /**
+     *
+     * @description init app
+     * @author AH.SALAH
+     * @static
+     * @returns app instance
+     * @memberof App
+     */
+    static init() {
+        let app = new App();
+
+        PopulateData.initData();
+        
+        let navInstance = NavBar.initNavBar();
+        let toTopInstance = ScrollToTop.initToTop();
+        
+        window.onscroll = () => {
+            navInstance.fixNavBar();
+            toTopInstance.handleScrollCb();
+        };
+        
+        SideNavIndicator.initSideNavIndicator();
+        SectionsObserver.initSectionsObserver();
+        
+        return app;
+    }
+
+}
+
+// start
+App.init();</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Dec 22 2020 05:37:30 GMT+0200 (Eastern European Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

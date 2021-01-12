@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "ref": "konnichi",
+            "romaji": "konnichiwa!",
+            "jp": "こんにちは。",
+            "en": "Hello!",
+            "img": "/assets/img/konnichi.png"
+        },
+        {
+            "id": 2,
+            "ref": "hajime",
+            "romaji": "hajimemashite!",
+            "jp": "初めまして。",
+            "en": "Nice to meet You!",
+            "img": "/assets/img/hajime.png"
+        },
+        {
+            "id": 3,
+            "ref": "watashi",
+            "romaji": "watashi wa Ahmed desu.",
+            "jp": "私はアハマドです。",
+            "en": "My name is Ahmed.",
+            "img": "/assets/img/watashi.jpg"
+        },
+        {
+            "id": 4,
+            "ref": "yoroshiku",
+            "romaji": "Yoroshiku onegaishimasu.",
+            "jp": "よろしくお願いします。",
+            "en": "Nice to meet you, Please, treat me well.",
+            "img": "/assets/img/yoroshiku.jpg"
+        },
+        {
+            "id": 5,
+            "ref": "sayou",
+            "romaji": "sayounara!",
+            "jp": "さようなら。",
+            "en": "GoodBye!",
+            "img": "/assets/img/sayou.gif"
+        }
+    ]
+}

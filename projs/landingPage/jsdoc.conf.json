@@ -1,0 +1,85 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": [
+            "jsdoc",
+            "closure"
+        ]
+    },
+    "source": {
+        "include": [
+            "src"
+        ],
+        "exclude": [
+            "node_modules",
+            "dist",
+            "dist*"
+        ],
+        "includePattern": ".+\\.js(jsx|ts|tsx|doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "name": "kohawayosa",
+        "footerText": "Created by AH.SALAH"
+    },
+    "opts": {
+        "destination": "_docs",
+        "recurse": true,
+        "readme": "README.md",
+        "template": "node_modules/docdash"
+    },
+    "docdash": {
+        "static": true,
+        "sort": true,
+        "sectionOrder": [
+            "Classes",
+            "Modules",
+            "Externals",
+            "Events",
+            "Namespaces",
+            "Mixins",
+            "Tutorials",
+            "Interfaces"
+        ],
+        "disqus": "",
+        "openGraph": {
+            "title": "kohawayosa",
+            "type": "website",
+            "image": "src/assets/img/nibbon-logo.svg",
+            "site_name": "kohawayosa",
+            "url": ""
+        },
+        "meta": {
+            "title": "kohawayosa",
+            "description": "kohawayosa landing page",
+            "keyword": "landing page"
+        },
+        "search": true,
+        "collapse": false,
+        "wrap": true,
+        "typedefs": true,
+        "navLevel": 2,
+        "private": false,
+        "removeQuotes": "none",
+        "scripts": [],
+        "menu": {
+            "Website": {
+                "href": "",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "website_link"
+            },
+            "Forum": {
+                "href": "javascript:;",
+                "target": "",
+                "class": "menu-item",
+                "id": "forum_link"
+            }
+        },
+        "scopeInOutputPath": true,
+        "nameInOutputPath": true,
+        "versionInOutputPath": true
+    }
+}
