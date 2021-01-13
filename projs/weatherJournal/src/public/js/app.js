@@ -48,8 +48,8 @@ const WeatherJ = function () {
             if (!el.node.value) errs.push({ node: el.node.name || el.node.id, msg: el.msg || 'Invalid input' });
             if (el.regex && !el.regex.test(el.node.value)) {
                 let nd = errs.filter(n => n.node === el.node.name || el.node.id);
-                if (nd.length) nd.msg = nd.msg + ' & ' + el.regexMsg || "Incorrect Value";
-                else errs.push({ node: el.node.name || el.node.id, msg: el.regexMsg || 'Incorrect Value' });
+                if (nd.length) nd.msg = nd.msg + ' & ' + el.regexMsg || "Incorrect Value e.g(12345) 5 digits";
+                else errs.push({ node: el.node.name || el.node.id, msg: el.regexMsg || 'Incorrect Value e.g(12345) 5 digits' });
             }
         }
 
@@ -62,7 +62,7 @@ const WeatherJ = function () {
 
         const errs = this.validate(
             [
-                { node: zipEle, msg: "Please Add Zip Value!", regex: /^\d+$/mi },
+                { node: zipEle, msg: "Please Add Zip Value!", regex: /^[0-9]{5,5}$/mi },
                 { node: feelingsEle, msg: "Please Add Feeling Value!" }
             ]
         );
@@ -132,7 +132,7 @@ const WeatherJ = function () {
                 errsEl.innerHTML = '';
                 clearTimeout(tt);
             }, 3000);
-            // return error;
+            return error;
         }
     };
 
