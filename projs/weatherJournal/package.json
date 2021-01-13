@@ -4,7 +4,7 @@
     "private": true,
     "main": "www",
     "scripts": {
-        "start": "start http://localhost:5000 && nodemon ./src/bin/www",
+        "start": "nodemon ./src/bin/www",
         "test": "jest",
         "docs": "jsdoc -c jsdoc.conf.json"
     },
