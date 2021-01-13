@@ -78,7 +78,7 @@ const WeatherJ = function () {
                 else {
                     zipEle.classList.remove('is-invalid');
                 }
-                
+
                 if (er.node === 'feelings') {
                     feelingsErrEle.innerHTML = er.msg;
                     feelingsEle.classList.add('is-invalid');
@@ -124,7 +124,7 @@ const WeatherJ = function () {
             return resp;
 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             this.handleLoadingBtn(false);
             let { errsEl } = this.cachedVars();
             errsEl.innerHTML = error.message;
@@ -139,30 +139,30 @@ const WeatherJ = function () {
     // Update ui handler
     this.updateUi = function ({ date, temp, feeling, zip, icon }) {
         const { form, dateEle, tempEleText, tempEle, contentEle, tempIconEle, zipcodeEle, entryHolderEle, feelingsEle, zipEle } = this.cachedVars();
-    
+
         dateEle.innerHTML = date || dateEle.innerHTML;
         tempEleText.innerHTML = Math.round(temp) + '°' ?? tempEleText.innerHTML;
         contentEle.innerHTML = feeling || contentEle.innerHTML;
         zipcodeEle.innerHTML = zip || zipcodeEle.innerHTML;
-    
+
         // empty form
         zipEle.value = '';
         feelingsEle.value = '';
-    
-    
-        document.querySelector('.weather-form .newIcon').remove();
-    
+
+        let wIcon = document.querySelector('.weather-form .newIcon');
+        if (wIcon) wIcon.remove();
+
         tempIconEle.classList.add('d-none');
-    
+
         let img = document.createElement('img');
         let newIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`;
         img.style.width = '30px';
         img.style.height = '30px';
         img.classList.add('newIcon');
         img.setAttribute('src', newIcon);
-    
+
         tempEle.prepend(img);
-    
+
         entryHolderEle.classList.remove('d-none');
     };
 
@@ -178,57 +178,57 @@ const WeatherJ = function () {
             generateBtnSpinner.classList.add('d-none');
         }
     };
-    
+
     /* Function called by event listener */
     this.handleBtnClick = async function (e) {
         e.preventDefault();
         e.stopPropagation();
-    
+
         this.handleLoadingBtn(true);
-    
+
         const { zipEle, feelingsEle } = this.cachedVars();
         const { apiK, apiUrl, weather } = this.apis();
-    
+
         // chk validation errs
         const errs = this.handleFormValidation();
-    
+
         if (errs) {
             this.handleLoadingBtn(false);
             return;
         }
-    
+
         try {
             let remoteApiResp = null,
                 localApiResp = null;
-    
+
             // req remote api service
             remoteApiResp = await this.http(this.composedApiServiceUrl(apiUrl, zipEle.value, apiK));
-    
+
             if (!remoteApiResp) return;
-            
+
             // destructure needed data
             let { dt, main: { temp }, weather: [{ icon }] } = remoteApiResp;
-    
+
             // try posting to the local server
             let localPostApiResp = await this.http(weather, 'POST', { date: dt, temp, zip: zipEle.value, feeling: feelingsEle.value, icon });
-    
+
             if (!localPostApiResp.done) return;
-    
+
             // get the latest req posted
             localApiResp = await this.http(weather + '/last');
-    
+
             if (!localApiResp.data) return;
-    
+
             // update ui
             this.updateUi(localApiResp.data);
-    
+
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
-    
+
         // hide loading btn
         this.handleLoadingBtn(false);
-    
+
     };
 };
 
