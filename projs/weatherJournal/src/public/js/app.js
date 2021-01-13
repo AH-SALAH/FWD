@@ -150,7 +150,7 @@ const WeatherJ = function () {
         feelingsEle.value = '';
     
     
-        document.querySelector('.weather-form .newIcon')?.remove();
+        document.querySelector('.weather-form .newIcon').remove();
     
         tempIconEle.classList.add('d-none');
     
@@ -239,8 +239,8 @@ WeatherJ.prototype.init = function () {
     const { generateBtn, form } = weatherj.cachedVars(); // use it
 
     // start on the clicked form btn
-    generateBtn?.addEventListener('click', (e) => weatherj.handleBtnClick(e));
-    form?.addEventListener('submit', (e) => e.preventDefault);
+    generateBtn.addEventListener('click', (e) => weatherj.handleBtnClick(e));
+    form.addEventListener('submit', (e) => e.preventDefault);
 };
 
 // init
