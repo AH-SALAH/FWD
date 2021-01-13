@@ -10,7 +10,7 @@
 
 ```
 .
-├── _docs
+├── _docs =====================> docs folder 
 ├── src
 │   ├── bin
 │   │   └── www.js ============> server runs & listen
