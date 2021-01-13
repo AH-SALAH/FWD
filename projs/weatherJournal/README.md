@@ -3,6 +3,10 @@
 ...
 ### Documentation
 
+``` bash
+# generate docs
+npm run docs
+```
 - Open _docs/index.html
 
 ---
