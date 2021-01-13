@@ -13,12 +13,12 @@
 ├── _docs
 ├── src
 │   ├── bin
-│   │   └── www.js ============> server runs
+│   │   └── www.js ============> server runs & listen
 │   ├── controllers ===========> Ctrls to handle routes bussines
 │   │   ├── home
-│   │   │   └── index.js
+│   │   │   └── index.js ======> home page controler
 │   │   └── weather
-│   │       └── index.js
+│   │       └── index.js ======> weather api controler
 │   ├── public
 │   │   ├── js
 │   │   │   └── app.js =========> client js
@@ -29,24 +29,24 @@
 │   │   │   │   └── mdb.free.scss
 │   │   │   ├── app.css
 │   │   │   ├── app.css.map
-│   │   │   └── app.scss
+│   │   │   └── app.scss =========> app main scss/css folder
 │   │   └── favicon.ico
 │   ├── routes
 │   │   ├── home
-│   │   │   └── index.js
+│   │   │   └── index.js ==========> home api router
 │   │   ├── weather
-│   │   │   └── index.js
-│   │   └── index.js  =============> routes wrapper/collector
+│   │   │   └── index.js ==========> weather api router
+│   │   └── index.js  =============> routes wrapper/collector that use all routes for app routers
 │   ├── views   ===================> hbs views
 │   │   ├── layouts
-│   │   │   └── layout.hbs
+│   │   │   └── layout.hbs ========> main layout html
 │   │   ├── partials
-│   │   │   └── footer.hbs
-│   │   ├── error.hbs
-│   │   └── index.hbs
-│   ├── app.config.js  ============> app config (e.g. cors() | view engine | global middleWare)
-│   ├── app.js  ===================> app express instance
-│   └── db.js  ====================> saves data as [{}]
+│   │   │   └── footer.hbs ========> html footer
+│   │   ├── error.hbs =============> error page
+│   │   └── index.hbs =============> main app page
+│   ├── app.config.js  ============> app config (e.g. cors() + view engine + global middleWare) setup
+│   ├── app.js  ===================> app express instance start
+│   └── db.js  ====================> in db saves data as [{}]
 ├── .editorconfig
 ├── .gitattributes
 ├── .gitignore
