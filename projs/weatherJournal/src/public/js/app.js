@@ -132,7 +132,7 @@ const WeatherJ = function () {
                 errsEl.innerHTML = '';
                 clearTimeout(tt);
             }, 3000);
-            return error;
+            // return error;
         }
     };
 

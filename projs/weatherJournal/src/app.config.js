@@ -19,6 +19,7 @@ const appConfig = app => {
     // instead of commonjs node __dirname which is not available in esModules types
     const __dirname = dirname(fileURLToPath(import.meta.url));
 
+    // disable x powered
     app.disable('x-powered-by');
     
     // view engine setup
@@ -36,7 +37,7 @@ const appConfig = app => {
         src: path.join(__dirname, 'public'),
         dest: path.join(__dirname, 'public'),
         indentedSyntax: false, // true = .sass and false = .scss
-        sourceMap: true
+        sourceMap: false
     }));
     // static folder serving
     app.use(express.static(path.join(__dirname, 'public')));
