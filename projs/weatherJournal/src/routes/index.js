@@ -3,11 +3,13 @@ import weather from "./weather/index.js";
 /**
  * @description app routes
  *
- * @param {*} app - app instance
+ * @param {Object} app - app instance
  */
 const routers = app => {
 
+    // use home api router
     app.use('/', home);
+    // use weather api router
     app.use('/weather', weather);
 
 };

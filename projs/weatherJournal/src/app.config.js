@@ -26,16 +26,19 @@ const appConfig = app => {
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', '.hbs');
 
+    // middlewares setup
     app.use(logger('dev'));
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
+    // sass middleware
     app.use(sassMiddleware({
         src: path.join(__dirname, 'public'),
         dest: path.join(__dirname, 'public'),
         indentedSyntax: false, // true = .sass and false = .scss
         sourceMap: true
     }));
+    // static folder serving
     app.use(express.static(path.join(__dirname, 'public')));
 
     // use routers
