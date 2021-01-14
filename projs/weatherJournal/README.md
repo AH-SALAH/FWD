@@ -1,5 +1,7 @@
 # Weather Journal Project
 
+* Needs Node > 14.2 or any version which supports es6 modules.
+
 ...
 ### Documentation
 
