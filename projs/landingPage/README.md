@@ -3,7 +3,7 @@
 Kohawayosa landing page
 
 ---
-* [App]()
+* [App](https://determined-williams-af7adb.netlify.app/)
 ---
 
 ## Tech:
